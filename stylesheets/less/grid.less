@@ -42,6 +42,7 @@ body {
 }
 
 .row(@columns:@columns) {
+	@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
 	display: block;
 	width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
 	margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
@@ -50,6 +51,7 @@ body {
 	.clearfix;
 }
 .column(@x,@columns:@columns) {
+	@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
 	display: inline;
 	float: left;
 	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
